@@ -11,6 +11,10 @@ This is a basic plugin template using CommonLibSSE-NG.
 git clone --recurse-submodules https://github.com/libxse/commonlibsse-ng-template
 cd commonlibsse-ng-template
 ```
+Or clone with your IDE and run this command:
+```
+git submodule update --init --recursive
+```
 
 ### Build
 To build the project, run the following command:
