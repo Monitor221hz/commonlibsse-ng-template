@@ -29,9 +29,6 @@ add_rules("mode.debug", "mode.releasedbg")
 -- idk if this even works still but its here just in case
 add_rules("plugin.vsxmake.autoupdate")
 
--- required for .vscode + msvc
-add_rules("plugin.compile_commands.autoupdate", {outputdir = ".vscode"})
-
 -- include custom rules
 includes("xmake-rules.lua")
 
