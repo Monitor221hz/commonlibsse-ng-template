@@ -46,10 +46,10 @@ target(name)
     })
 
     -- copy a folder named ini to output
-    add_rules("template.copy_resource", {
-        name = "copy_ini",
-        src = "ini",
-        dest = string.format("SKSE/Plugins/%s", name)
+    add_rules("template.copy_resources", {
+        files = {
+            {src = "ini/Settings.ini", dest = string.format("SKSE/Plugins/%s", name)}
+        }
     })
 
     -- add src files
