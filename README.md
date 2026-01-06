@@ -22,6 +22,8 @@ To build the project, run the following command:
 xmake build
 ```
 
+> ***Note:*** *This will generate a `build/windows/` directory in the **project's root directory** with the build output.*
+
 ### Intellisense (VSCode)
 
 After a successful build, add the following line as a property to your `c_cpp_properties.json`:
@@ -31,7 +33,7 @@ After a successful build, add the following line as a property to your `c_cpp_pr
 ```
 
 Example:
-```
+```json
 {
     "configurations": [
         {
@@ -63,9 +65,6 @@ Then run the `XMake: Update Intellisense` command to make intellisense start wor
 Copy and paste the following into `launch.json` in the `.vscode` folder.
 ```json
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
@@ -78,8 +77,6 @@ Copy and paste the following into `launch.json` in the `.vscode` folder.
 ```
 
 Press F5 or the Run and Debug button in the sidebar to attach to SkyrimSE.exe while it's running (build mode must be `debug` to hit breakpoints).
-
-> ***Note:*** *This will generate a `build/windows/` directory in the **project's root directory** with the build output.*
 
 ### Build Output (Optional)
 
