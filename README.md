@@ -48,8 +48,8 @@ Example:
             ],
             "windowsSdkVersion": "10.0.26100.0",
             "compilerPath": "cl.exe",
-            "cStandard": "c17",
-            "cppStandard": "c++17",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
             "intelliSenseMode": "windows-msvc-x64", 
             "compileCommands":[ "${workspaceFolder}/.vscode/compile_commands.json"]
         }
