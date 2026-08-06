@@ -32,7 +32,8 @@ add_rules("plugin.vsxmake.autoupdate")
 -- include custom rules
 includes("xmake-rules.lua")
 
-
+add_requires("simpleini")
+add_requires("safetyhook")
 -- targets
 target(name)
     -- add dependencies to target
@@ -46,10 +47,10 @@ target(name)
     })
 
     -- copy a folder named ini to output
-    add_rules("template.copy_resource", {
-        name = "copy_ini",
-        src = "ini",
-        dest = string.format("SKSE/Plugins/%s", name)
+    add_rules("template.copy_resources", {
+        files = {
+            {src = "ini/Settings.ini", dest = string.format("SKSE/Plugins/%s/Settings.ini", name)}
+        }
     })
 
     -- add src files
@@ -57,3 +58,7 @@ target(name)
     add_headerfiles("src/**.h")
     add_includedirs("src")
     set_pcxxheader("src/pch.h")
+
+    -- extra packages
+    add_packages("simpleini")
+    add_packages("safetyhook")

@@ -24,6 +24,60 @@ xmake build
 
 > ***Note:*** *This will generate a `build/windows/` directory in the **project's root directory** with the build output.*
 
+### Intellisense (VSCode)
+
+After a successful build, add the following line as a property to your `c_cpp_properties.json`:
+
+```json
+"compileCommands":[ "${workspaceFolder}/.vscode/compile_commands.json"]
+```
+
+Example:
+```json
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.26100.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "windows-msvc-x64", 
+            "compileCommands":[ "${workspaceFolder}/.vscode/compile_commands.json"]
+        }
+    ],
+    "version": 4
+}
+```
+
+Then run the `XMake: Update Intellisense` command to make intellisense start working. You need to do this every time a new file is created and linked.
+
+### Debugger (VSCode)
+
+Copy and paste the following into `launch.json` in the `.vscode` folder.
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(Windows) Attach",
+            "type": "cppvsdbg",
+            "request": "attach",
+        }
+    ]
+}
+```
+
+Press F5 or the Run and Debug button in the sidebar to attach to SkyrimSE.exe while it's running (build mode must be `debug` to hit breakpoints).
+
 ### Build Output (Optional)
 
 #### Mod Directory
