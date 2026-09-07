@@ -58,7 +58,7 @@ Example:
 }
 ```
 
-Then run the `XMake: Update Intellisense` command to make intellisense start working. You need to do this every time a new file is created and linked.
+Then run the `XMake: Update Intellisense` command to make intellisense start working. You need to do this every time a new file is created and linked. (You need the XMake VSCode plugin!)
 
 ### Debugger (VSCode)
 
